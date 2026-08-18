@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Akber Shah — Engineering Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+:root{--navy:#12233C;--gold:#B8863B;--bg:#F7F5F0;--surface:#FFFFFF;--border:#E4DFD3;--text:#1B2330;--text-dim:#5B6472;--text-faint:#8A93A0;--blue:#2857A6;--callout-bg:#EEF2F8;}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;}
+a{color:var(--blue);}
+
+nav{background:var(--navy);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;}
+.nav-logo{color:#fff;font-weight:700;font-size:1rem;padding:1rem 0;}
+.nav-links{display:flex;}
+.nav-links a{color:rgba(255,255,255,0.7);text-decoration:none;font-size:0.8rem;letter-spacing:0.05em;text-transform:uppercase;padding:1.25rem 0;margin-left:1.75rem;border-bottom:2px solid transparent;transition:color 0.2s,border-color 0.2s;}
+.nav-links a:hover{color:#fff;border-color:var(--gold);}
+
+.hero{background:var(--navy);color:#fff;}
+.hero .wrap{max-width:900px;margin:0 auto;padding:48px 24px 40px;display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:20px;}
+.hero h1{font-size:clamp(30px,5vw,42px);font-weight:800;line-height:1.1;letter-spacing:-0.5px;}
+.hero-right{text-align:right;max-width:340px;}
+.hero-right .role{color:var(--gold);font-weight:700;font-size:15px;margin-bottom:6px;}
+.hero-right .sub{color:rgba(255,255,255,0.65);font-size:13.5px;margin-bottom:10px;}
+.hero-right .contact{color:#C9D2DE;font-size:13px;}
+.hero-right .contact a{color:#C9D2DE;text-decoration:none;}
+.hero-right .contact a:hover{color:#fff;}
+.hero-right .creds{margin-top:8px;font-size:12px;color:var(--gold);font-family:monospace;}
+@media (max-width:560px){ .hero .wrap{flex-direction:column;} .hero-right{text-align:left;} }
+
+.wrap{max-width:900px;margin:0 auto;padding:0 24px;}
+section{padding:44px 0;}
+.eyebrow{font-size:11.5px;font-weight:700;letter-spacing:0.06em;color:var(--gold);text-transform:uppercase;margin-bottom:6px;}
+.section-title{font-size:24px;font-weight:800;margin-bottom:24px;}
+
+.project{background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--gold);border-radius:4px;padding:28px 30px;margin-bottom:24px;}
+.proj-tag{font-size:11px;font-weight:700;letter-spacing:0.05em;color:var(--gold);text-transform:uppercase;margin-bottom:8px;}
+.project h3{font-size:19px;font-weight:800;margin-bottom:10px;color:var(--navy);}
+.project p.desc{font-size:14.5px;color:var(--text-dim);margin-bottom:18px;max-width:640px;}
+
+.gallery{display:flex;flex-direction:column;gap:10px;margin-bottom:18px;}
+.gallery.row{flex-direction:row;flex-wrap:wrap;}
+.gallery.row .shot{flex:1;min-width:230px;}
+.shot{border:1px solid var(--border);border-radius:4px;overflow:hidden;background:#fafaf8;}
+.shot img{display:block;width:100%;height:auto;cursor:zoom-in;}
+.shot-cap{font-size:11px;color:var(--text-faint);padding:7px 10px;border-top:1px solid var(--border);}
+.pending-note{font-size:13px;color:var(--text-faint);font-style:italic;background:var(--bg);border:1px dashed var(--border);border-radius:4px;padding:12px 14px;margin-bottom:18px;}
+
+.callout{display:flex;align-items:center;gap:14px;background:var(--callout-bg);border-radius:4px;padding:12px 16px;margin-bottom:16px;}
+.callout .label{font-size:10.5px;font-weight:700;letter-spacing:0.05em;color:var(--blue);text-transform:uppercase;flex-shrink:0;}
+.callout .value{font-size:14px;font-weight:700;color:var(--navy);}
+
+.tags{font-size:12px;color:var(--text-faint);}
+
+.cap-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:24px;}
+.cap-col .cap-title{font-size:11px;font-weight:700;letter-spacing:0.05em;color:var(--gold);text-transform:uppercase;margin-bottom:10px;}
+.cap-col ul{list-style:none;}
+.cap-col li{font-size:14px;color:var(--text);padding:4px 0;border-bottom:1px solid var(--border);}
+.cap-col li:last-child{border-bottom:none;}
+
+.cred-card{background:var(--surface);border:1px solid var(--border);border-radius:4px;padding:22px 26px;display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:14px;}
+.cred-card .school{font-size:16px;font-weight:800;color:var(--navy);}
+.cred-card .degree{color:var(--text-dim);font-size:14px;margin-top:4px;}
+.cred-card .date{font-size:12px;color:var(--text-faint);white-space:nowrap;}
+.cert-badges{display:flex;gap:10px;flex-wrap:wrap;}
+.badge{font-size:12.5px;padding:6px 14px;background:var(--callout-bg);color:var(--blue);border-radius:100px;font-weight:600;}
+
+footer{background:var(--navy);color:#C9D2DE;padding:34px 0;margin-top:20px;}
+footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;}
+footer .fname{color:#fff;font-weight:700;font-size:15px;}
+footer .frole{font-size:12.5px;color:var(--gold);}
+footer .flinks{display:flex;gap:18px;font-size:13px;}
+footer a{color:#C9D2DE;text-decoration:none;}
+footer a:hover{color:#fff;}
+
+.lightbox-overlay{position:fixed;inset:0;background:rgba(13,31,53,0.92);display:none;align-items:center;justify-content:center;z-index:1000;cursor:zoom-out;padding:2rem;}
+.lightbox-overlay.active{display:flex;}
+.lightbox-overlay img{max-width:100%;max-height:100%;border-radius:6px;box-shadow:0 20px 60px rgba(0,0,0,0.5);}
+
+hr.divider{border:none;border-top:1px solid var(--border);}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">A. Shah</div>
+  <div class="nav-links">
+    <a href="#projects">Projects</a>
+    <a href="#skills">Skills</a>
+    <a href="#education">Education</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <h1>Akber<br>Shah</h1>
+    <div class="hero-right">
+      <div class="role">Aspiring Network Engineer &middot; CCNA</div>
+      <div class="sub">UT Dallas Computer Engineering graduate seeking network engineering opportunities in the Dallas&ndash;Fort Worth area.</div>
+      <div class="contact">Mansfield, TX &nbsp;|&nbsp; 817-908-9868 &nbsp;|&nbsp; <a href="mailto:akberashah200@icloud.com">akberashah200@icloud.com</a></div>
+      <div class="creds">CCNA Certified &middot; OSHA 10-Hour General Industry Safety and Health</div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <section id="projects">
+    <div class="eyebrow">Work</div>
+    <div class="section-title">Projects</div>
+
+    <div class="project">
+      <div class="proj-tag">Systems &amp; Virtualization &middot; Home Lab</div>
+      <h3>Enterprise Active Directory Homelab</h3>
+      <p class="desc">Deployed a Windows Server Domain Controller in Proxmox, configuring Active Directory Domain Services (AD DS), DNS, Organizational Units, users, security groups, and domain-joined Windows 11 clients. Implemented Group Policy Objects to automate network drive mapping, deploy desktop wallpapers, and enforce login banners through centralized user and computer management, then configured SMB file shares with NTFS permissions and Role-Based Access Control using Active Directory security groups to secure department resources.</p>
+
+      <div class="gallery">
+        <div class="shot">
+          <img src="assets/ad-ous-group-policy.png" alt="Active Directory Users and Computers showing Organizational Units for departments and a domain user" onclick="openLightbox(this.src)">
+          <div class="shot-cap">Organizational structure</div>
+        </div>
+        <div class="shot">
+          <img src="assets/ad-drive-mapping-gpo.png" alt="Group Policy driven network drive mapping for the Engineering OU" onclick="openLightbox(this.src)">
+          <div class="shot-cap">Network drive mapping via Group Policy</div>
+        </div>
+        <div class="shot">
+          <img src="assets/ad-login-banner.png" alt="Homelab login banner enforced through Group Policy showing authorized use notice" onclick="openLightbox(this.src)">
+          <div class="shot-cap">Login banner enforced via Group Policy</div>
+        </div>
+      </div>
+
+      <div class="callout">
+        <span class="label">Scope</span>
+        <span class="value">Full AD domain stood up from scratch: DNS, GPOs, RBAC, and domain-joined clients</span>
+      </div>
+
+      <div class="tags">Windows Server &middot; Active Directory Domain Services &middot; Group Policy (GPO) &middot; DNS &middot; RBAC / NTFS Permissions &middot; Proxmox VE</div>
+    </div>
+
+    <div class="project">
+      <div class="proj-tag">Systems &amp; Virtualization &middot; Home Lab</div>
+      <h3>Virtualized Infrastructure Lab</h3>
+      <p class="desc">Built a self-hosted lab on Proxmox that mirrors how production infrastructure is actually run: compute and storage kept on separate systems, every application containerized, and the whole environment monitored rather than run blind. Deployed a Proxmox platform hosting Ubuntu Server and TrueNAS, then stood up 7 Docker containers &mdash; Portainer, Jellyfin, Nginx Proxy Manager, Grafana, Prometheus, Node Exporter, and AdGuard Home &mdash; covering app management, media streaming, monitoring, reverse proxy, and DNS filtering.</p>
+
+      <div class="gallery">
+        <div class="shot">
+          <img src="assets/proxmox-summary.png" alt="Proxmox VE node summary showing CPU, RAM, and load graphs alongside the VM/CT list" onclick="openLightbox(this.src)">
+          <div class="shot-cap">Proxmox VE &mdash; node summary, live resource graphs</div>
+        </div>
+        <div class="shot">
+          <img src="assets/portainer-containers.png" alt="Portainer container list showing running services including adguard-home, grafana, prometheus, and portainer" onclick="openLightbox(this.src)">
+          <div class="shot-cap">Portainer Dashboard (Hosted on Ubuntu/Docker)</div>
+        </div>
+        <div class="shot">
+          <img src="assets/grafana-dashboard.png" alt="Grafana dashboard with CPU, RAM, swap, and network gauges fed by Prometheus and node-exporter" onclick="openLightbox(this.src)">
+          <div class="shot-cap">Grafana &mdash; CPU / RAM / network dashboard</div>
+        </div>
+      </div>
+
+      <div class="callout">
+        <span class="label">Scale</span>
+        <span class="value">7 Docker containers running on a Proxmox + TrueNAS platform, fully monitored</span>
+      </div>
+
+      <div class="tags">Proxmox VE &middot; TrueNAS &middot; Docker &middot; Portainer &middot; Grafana / Prometheus &middot; Nginx Proxy Manager</div>
+    </div>
+
+    <div class="project">
+      <div class="proj-tag">Network Design &middot; CCNA Lab</div>
+      <h3>CCNA Enterprise Network Mega Lab</h3>
+      <p class="desc">Configured a two-office enterprise network in Cisco Packet Tracer around a real three-tier architecture: redundant core switches, a dual distribution layer serving Office A and Office B, and access switches feeding wireless, VoIP, and endpoints in each. Implemented VLANs, inter-VLAN routing, OSPF, HSRPv2, EtherChannel, Rapid PVST+, DHCP, DNS, and NAT/PAT, then hardened the network with ACLs, Port Security, DHCP Snooping, Dynamic ARP Inspection, and SSH-only management &mdash; validating failover with Cisco IOS troubleshooting tools.</p>
+
+      <div class="gallery">
+        <div class="shot">
+          <img src="assets/ccna-topology.png" alt="Three-tier enterprise network topology with redundant core switches, dual distribution layers for Office A and Office B, and access switches feeding phones, laptops, PCs, and a server" onclick="openLightbox(this.src)">
+          <div class="shot-cap">Full topology &mdash; redundant core/distribution mesh, Office A &amp; Office B</div>
+        </div>
+      </div>
+
+      <div class="callout">
+        <span class="label">Scope</span>
+        <span class="value">Multi-site, three-tier network with full core and distribution redundancy</span>
+      </div>
+
+      <div class="tags">Cisco Packet Tracer &middot; VLANs &middot; OSPF &middot; HSRPv2 &middot; EtherChannel &middot; ACLs &middot; DHCP Snooping / DAI</div>
+    </div>
+
+    <div class="project">
+      <div class="proj-tag">Circuit Design &middot; UT Dallas</div>
+      <h3>MOSFET Logic Gate Lab</h3>
+      <p class="desc">Collaborated in the design and development of a MOSFET-based digital logic laboratory experiment that was adopted for instructional use in the university's engineering curriculum. Characterized MOSFET performance by analyzing threshold voltage (V<sub>TH</sub>) and I-V characteristics using PSpice and WaveForms to evaluate device behavior and select matched components. Designed, simulated, and validated MOSFET-based NOT, NAND, and SR latch circuits using PSpice and verified logic operation through hardware testing with WaveForms.</p>
+
+      <div class="gallery">
+        <div class="shot">
+          <img src="assets/mosfet-nand.png" alt="CMOS NAND gate circuit schematic with two n-type and two p-type MOSFETs" onclick="openLightbox(this.src)">
+          <div class="shot-cap">NAND gate circuit</div>
+        </div>
+        <div class="shot">
+          <img src="assets/mosfet-srlatch.png" alt="SR latch circuit schematic built from two cross-coupled NAND gate stages" onclick="openLightbox(this.src)">
+          <div class="shot-cap">SR latch circuit</div>
+        </div>
+      </div>
+
+      <div class="callout">
+        <span class="label">Outcome</span>
+        <span class="value">Adopted for instructional use in the university engineering curriculum</span>
+      </div>
+
+      <div class="tags">PSpice &middot; WaveForms &middot; CMOS Logic &middot; Threshold Voltage Characterization</div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <section id="skills">
+    <div class="eyebrow">Capabilities</div>
+    <div class="section-title">Skills &amp; Tools</div>
+
+    <div class="cap-grid">
+      <div class="cap-col">
+        <div class="cap-title">Networking</div>
+        <ul>
+          <li>Cisco IOS CLI</li>
+          <li>VLANs / OSPF / HSRP</li>
+          <li>EtherChannel</li>
+          <li>STP / Rapid PVST+</li>
+          <li>ACLs, DHCP, DNS</li>
+          <li>NAT/PAT, SNMP, SSH</li>
+          <li>TCP/IP</li>
+        </ul>
+      </div>
+      <div class="cap-col">
+        <div class="cap-title">Systems &amp; Virtualization</div>
+        <ul>
+          <li>Linux Administration</li>
+          <li>Windows Server / Active Directory</li>
+          <li>Group Policy (GPO)</li>
+          <li>RBAC / NTFS Permissions</li>
+          <li>Proxmox VE</li>
+          <li>TrueNAS</li>
+          <li>Docker / Portainer</li>
+          <li>Nginx Proxy Manager</li>
+        </ul>
+      </div>
+      <div class="cap-col">
+        <div class="cap-title">Hardware &amp; Simulation</div>
+        <ul>
+          <li>Cisco Packet Tracer</li>
+          <li>PuTTY</li>
+          <li>PSpice / WaveForms</li>
+          <li>Altium Designer / KiCad</li>
+          <li>Tinkercad</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <section id="education">
+    <div class="eyebrow">Background</div>
+    <div class="section-title">Education</div>
+
+    <div class="cred-card" style="margin-bottom:28px;">
+      <div>
+        <div class="school">University of Texas at Dallas</div>
+        <div class="degree">B.S. Computer Engineering</div>
+      </div>
+      <div class="date">Graduated Dec 2025</div>
+    </div>
+
+    <div class="eyebrow">Credentials</div>
+    <div class="section-title" style="margin-bottom:14px;">Certifications</div>
+    <div class="cert-badges">
+      <span class="badge">CCNA &mdash; Cisco Certified Network Associate</span>
+      <span class="badge">OSHA 10-Hour General Industry Safety and Health</span>
+    </div>
+  </section>
+
+</div>
+
+<footer id="contact">
+  <div class="wrap">
+    <div>
+      <div class="fname">Akber Shah</div>
+      <div class="frole">Aspiring Network Engineer &middot; CCNA</div>
+    </div>
+    <div class="flinks">
+      <a href="tel:8179089868">817-908-9868</a>
+      <a href="mailto:akberashah200@icloud.com">Email</a>
+      <a href="https://www.linkedin.com/in/akber-shah-867958234/" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </div>
+</footer>
+
+<div class="lightbox-overlay" id="lightbox" onclick="this.classList.remove('active')">
+  <img id="lightbox-img" src="" alt="Expanded screenshot">
+</div>
+<script>
+function openLightbox(src){
+  document.getElementById('lightbox-img').src = src;
+  document.getElementById('lightbox').classList.add('active');
+}
+document.addEventListener('keydown', function(e){
+  if(e.key === 'Escape'){ document.getElementById('lightbox').classList.remove('active'); }
+});
+</script>
+
+</body>
+</html>
